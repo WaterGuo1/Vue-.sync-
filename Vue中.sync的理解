@@ -1,0 +1,11 @@
+Vue 中的 .sync 修饰符的理解
+当一个子组件改变了一个prop的值时，这个变化也会同步到父组件中所绑定。
+示例：
+```
+<Child :money="total" v-on:update:money="total = $event"/>
+```
+就会等价于
+```
+<Child :money.sync="total"/>
+```
+第二种写法极大的缩略了第一种写法，.sync是一个语法糖。
